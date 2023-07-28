@@ -10,7 +10,7 @@ module.exports = function (context) {
 
   utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile1, errorFileContent1, confs.textToReplace, '');
   errorFileContent1 = utils.readErrorFile(context.opts.projectRoot + confs.androidPath + confs.errorFile1);
-  utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile1, errorFileContent1, scriptToReplace, scriptToReplace + 'document.addEventListener("backbutton", function(e)       {        e.preventDefault();console.log("clicked");    }, false);    }');
+  utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile1, errorFileContent1, scriptToReplace, scriptToReplace + 'document.addEventListener("backbutton", function(e)       {        e.preventDefault();console.log("clicked");    }, false);    ');
   
   utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile2, errorFileContent2, confs.textToReplace, '');
 }
