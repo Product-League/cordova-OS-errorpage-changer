@@ -12,7 +12,7 @@ module.exports = function (context) {
   errorFileContent1 = utils.readErrorFile(context.opts.projectRoot + confs.androidPath + confs.errorFile1);
   utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile1, errorFileContent1, scriptToReplace, scriptToReplace + '<script type="text/javascript">(function () {function onLoad() {        document.addEventListener("deviceready", onDeviceReady, false);    }    function onDeviceReady() {      document.addEventListener("backbutton", function(e) {e.preventDefault();console.log("clicked");}, false);    }})();</script>');
   errorFileContent1 = utils.readErrorFile(context.opts.projectRoot + confs.androidPath + confs.errorFile1);
-  utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile1, errorFileContent1, '<body', '<body onload="onLoad"');
+  utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile1, errorFileContent1, '<body', '<body onload="onLoad()"');
   
   utils.errorFileReplacer(context.opts.projectRoot + confs.androidPath + confs.errorFile2, errorFileContent2, confs.textToReplace, '');
 }
